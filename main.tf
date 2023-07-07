@@ -23,4 +23,20 @@ module "elasticcache"{
   PORT                   = var.PORT
 }
 
+module "documentdb" {
+  depends_on             = [module.vpc]
+  source = "git::https://github.com/chandralekhasingasani/tf-module-redis.git"
+  COMPONENT = var.COMPONENT
+  ENV = var.ENV
+  SKIP_FINAL_SNAPSHOT = var.SKIP_FINAL_SNAPSHOT
+  ENGINE = var.ENGINE
+  SUBNET_IDS = module.vpc.SUBNET_IDS
+  FAMILY = var.FAMILY
+  INSTANCE_CLASS = var.INSTANCE_CLASS
+  NODE_COUNT = var.NODE_COUNT
+  VPC_ID = module.vpc.VPC_ID
+  CIDR_BLOCK = var.CIDR_BLOCK
+  AZ = var.AZ
+}
+
 
