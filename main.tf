@@ -23,7 +23,7 @@ module "elasticcache"{
   PORT                   = var.PORT
 }
 
-module "documentdb" {
+/*module "documentdb" {
   depends_on             = [module.vpc]
   source = "git::https://github.com/chandralekhasingasani/tf-module-documentdb.git"
   COMPONENT = var.COMPONENT
@@ -34,12 +34,12 @@ module "documentdb" {
   AZ = var.AZ
   ENGINE              = var.DOCDB_ENGINE
   ENGINE_VERSION      = var.DOCDB_ENGINE_VERSION
-  INSTANCE_CLASS           = var.DOCDB_INSTANCE_CLASS
+  INSTANCE_CLASS      = var.DOCDB_INSTANCE_CLASS
   NODE_COUNT          = var.DOCDB_NODE_COUNT
   FAMILY              = var.DOCDB_FAMILY
   SKIP_FINAL_SNAPSHOT = var.DOCDB_SKIP_FINAL_SNAPSHOT
   WORKSTATION_IP      = var.WORKSTATION_IP
-}
+}*/
 
 module "app"{
   source                 = "git::https://github.com/chandralekhasingasani/tf-module-mutable.git"
