@@ -37,7 +37,6 @@ module "documentdb" {
   NODE_COUNT          = var.DOCDB_NODE_COUNT
   FAMILY              = var.DOCDB_FAMILY
   SKIP_FINAL_SNAPSHOT = var.DOCDB_SKIP_FINAL_SNAPSHOT
-  WORKSTATION_IP      = var.WORKSTATION_IP
 }
 
 module "app"{
