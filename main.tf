@@ -22,7 +22,7 @@ module "elasticcache"{
   FAMILY                 = var.FAMILY
 }
 
-module "documentdb" {
+/*module "documentdb" {
   depends_on             = [module.vpc]
   source = "git::https://github.com/chandralekhasingasani/tf-module-documentdb.git"
   COMPONENT = var.COMPONENT
@@ -37,10 +37,10 @@ module "documentdb" {
   NODE_COUNT          = var.DOCDB_NODE_COUNT
   FAMILY              = var.DOCDB_FAMILY
   SKIP_FINAL_SNAPSHOT = var.DOCDB_SKIP_FINAL_SNAPSHOT
-}
+}*/
 
 module "app"{
-  depends_on             = [module.documentdb,module.elasticcache]
+  depends_on             = [module.elasticcache]
   source                 = "git::https://github.com/chandralekhasingasani/tf-module-mutable.git"
   ENV                    = var.ENV
   COMPONENT              = var.COMPONENT
