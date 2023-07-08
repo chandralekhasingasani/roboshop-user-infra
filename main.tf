@@ -25,7 +25,7 @@ module "elasticcache"{
 
 module "documentdb" {
   depends_on             = [module.vpc]
-  source = "git::https://github.com/chandralekhasingasani/tf-module-redis.git"
+  source = "git::https://github.com/chandralekhasingasani/tf-module-documentdb.git"
   COMPONENT = var.COMPONENT
   ENV = var.ENV
   SUBNET_IDS = module.vpc.SUBNET_IDS
