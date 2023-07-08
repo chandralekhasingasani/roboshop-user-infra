@@ -21,6 +21,7 @@ module "elasticcache"{
   ENGINE_VERSION         = var.ENGINE_VERSION
   FAMILY                 = var.FAMILY
   PRIVATE_HOSTED_ZONE_ID = module.vpc.PRIVATE_HOSTED_ZONE_ID
+  DB_NAME                = "users"
 }
 
 module "documentdb" {
