@@ -25,5 +25,4 @@ variable "DOCDB_SKIP_FINAL_SNAPSHOT" {}
 variable "IS_ALB_INTERNAL" {
   default = true
 }
-variable "CIDR_BLOCK_ELB_ACCESS" {}
 variable "FRONT_END_CIDR" {}
