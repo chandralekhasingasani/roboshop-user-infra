@@ -34,7 +34,7 @@ module "documentdb" {
   AZ = var.AZ
   ENGINE              = var.DOCDB_ENGINE
   ENGINE_VERSION      = var.DOCDB_ENGINE_VERSION
-  NODE_TYPE           = var.DOCDB_INSTANCE_CLASS
+  INSTANCE_CLASS           = var.DOCDB_INSTANCE_CLASS
   NODE_COUNT          = var.DOCDB_NODE_COUNT
   FAMILY              = var.DOCDB_FAMILY
   SKIP_FINAL_SNAPSHOT = var.DOCDB_SKIP_FINAL_SNAPSHOT
