@@ -28,8 +28,6 @@ module "documentdb" {
   source = "git::https://github.com/chandralekhasingasani/tf-module-redis.git"
   COMPONENT = var.COMPONENT
   ENV = var.ENV
-  SKIP_FINAL_SNAPSHOT = var.SKIP_FINAL_SNAPSHOT
-  ENGINE = var.ENGINE
   SUBNET_IDS = module.vpc.SUBNET_IDS
   VPC_ID = module.vpc.VPC_ID
   CIDR_BLOCK = module.vpc.VPC_CIDR
