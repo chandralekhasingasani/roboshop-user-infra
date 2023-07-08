@@ -55,7 +55,7 @@ module "app"{
   IAM_INSTANCE_PROFILE   = var.IAM_INSTANCE_PROFILE
   IS_ALB_INTERNAL        = var.IS_ALB_INTERNAL
   CIDR_BLOCK_ELB_ACCESS  = [var.FRONT_END_CIDR, module.vpc.VPC_CIDR]
-  DBTYPE                 = var.DB_TYPE
+  DBTYPE                 = var.DBTYPE
   DOCDB_ENDPOINT         = module.documentdb.DOCDB_ENDPOINT
 }
 
