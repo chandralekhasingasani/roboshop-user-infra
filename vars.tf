@@ -18,3 +18,9 @@ variable "INSTANCE_COUNT" {}
 variable "INSTANCE_TYPE" {}
 variable "WORKSTATION_IP" {}
 variable "IAM_INSTANCE_PROFILE" {}
+variable "DOCDB_ENGINE" {}
+variable "DOCDB_ENGINE_VERSION" {}
+variable "DOCDB_INSTANCE_CLASS" {}
+variable "DOCDB_NODE_COUNT" {}
+variable "DOCDB_FAMILY" {}
+variable "DOCDB_SKIP_FINAL_SNAPSHOT" {}

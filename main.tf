@@ -31,16 +31,20 @@ module "documentdb" {
   SKIP_FINAL_SNAPSHOT = var.SKIP_FINAL_SNAPSHOT
   ENGINE = var.ENGINE
   SUBNET_IDS = module.vpc.SUBNET_IDS
-  FAMILY = var.FAMILY
-  INSTANCE_CLASS = var.INSTANCE_CLASS
-  NODE_COUNT = var.NODE_COUNT
   VPC_ID = module.vpc.VPC_ID
-  CIDR_BLOCK = var.CIDR_BLOCK
+  CIDR_BLOCK = module.vpc.VPC_CIDR
   AZ = var.AZ
+  ENGINE              = var.DOCDB_ENGINE
+  ENGINE_VERSION      = var.DOCDB_ENGINE_VERSION
+  NODE_TYPE           = var.DOCDB_INSTANCE_CLASS
+  NODE_COUNT          = var.DOCDB_NODE_COUNT
+  FAMILY              = var.DOCDB_FAMILY
+  SKIP_FINAL_SNAPSHOT = var.DOCDB_SKIP_FINAL_SNAPSHOT
+  WORKSTATION_IP      = var.WORKSTATION_IP
 }
 
 module "app"{
-  source                 ="git::https://github.com/chandralekhasingasani/tf-module-mutable.git"
+  source                 = "git::https://github.com/chandralekhasingasani/tf-module-mutable.git"
   ENV                    = var.ENV
   COMPONENT              = var.COMPONENT
   VPC_ID                 = module.vpc.VPC_ID
