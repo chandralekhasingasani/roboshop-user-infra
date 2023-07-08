@@ -22,3 +22,8 @@ variable "DOCDB_INSTANCE_CLASS" {}
 variable "DOCDB_NODE_COUNT" {}
 variable "DOCDB_FAMILY" {}
 variable "DOCDB_SKIP_FINAL_SNAPSHOT" {}
+variable "IS_ALB_INTERNAL" {
+  default = true
+}
+variable "CIDR_BLOCK_ELB_ACCESS" {}
+variable "FRONT_END_CIDR" {}
