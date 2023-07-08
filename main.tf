@@ -7,7 +7,7 @@ module "vpc"{
   COMPONENT           = var.COMPONENT
 }
 
-module "elasticcache"{
+/*module "elasticcache"{
   depends_on             = [module.vpc]
   source                 ="git::https://github.com/chandralekhasingasani/tf-module-redis.git"
   ENV                    = var.ENV
@@ -20,7 +20,7 @@ module "elasticcache"{
   NUM_CACHE_NODES        = var.NUM_CACHE_NODES
   ENGINE_VERSION         = var.ENGINE_VERSION
   FAMILY                 = var.FAMILY
-}
+}*/
 
 /*module "documentdb" {
   depends_on             = [module.vpc]
@@ -40,7 +40,7 @@ module "elasticcache"{
 }*/
 
 module "app"{
-  depends_on             = [module.elasticcache]
+  /*depends_on             = [module.elasticcache]*/
   source                 = "git::https://github.com/chandralekhasingasani/tf-module-mutable.git"
   ENV                    = var.ENV
   COMPONENT              = var.COMPONENT
