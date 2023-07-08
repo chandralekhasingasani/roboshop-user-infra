@@ -20,7 +20,6 @@ module "elasticcache"{
   NUM_CACHE_NODES        = var.NUM_CACHE_NODES
   ENGINE_VERSION         = var.ENGINE_VERSION
   FAMILY                 = var.FAMILY
-  PORT                   = var.PORT
 }
 
 /*module "documentdb" {
