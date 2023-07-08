@@ -10,8 +10,6 @@ variable "NUM_CACHE_NODES" {}
 variable "ENGINE_VERSION" {}
 variable "FAMILY" {}
 variable "PORT" {}
-variable "SKIP_FINAL_SNAPSHOT" {}
-variable "INSTANCE_CLASS" {}
 variable "NODE_COUNT" {}
 variable "SPOT_INSTANCE_COUNT" {}
 variable "INSTANCE_COUNT" {}
