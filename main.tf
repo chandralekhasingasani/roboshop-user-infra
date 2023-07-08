@@ -40,6 +40,7 @@ module "documentdb" {
 }
 
 module "app"{
+  depends_on             = [module.documentdb,module.elasticcache]
   source                 = "git::https://github.com/chandralekhasingasani/tf-module-mutable.git"
   ENV                    = var.ENV
   COMPONENT              = var.COMPONENT
