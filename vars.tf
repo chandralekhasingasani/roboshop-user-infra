@@ -13,3 +13,8 @@ variable "PORT" {}
 variable "SKIP_FINAL_SNAPSHOT" {}
 variable "INSTANCE_CLASS" {}
 variable "NODE_COUNT" {}
+variable "SPOT_INSTANCE_COUNT" {}
+variable "INSTANCE_COUNT" {}
+variable "INSTANCE_TYPE" {}
+variable "WORKSTATION_IP" {}
+variable "IAM_INSTANCE_PROFILE" {}

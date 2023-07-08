@@ -39,4 +39,20 @@ module "documentdb" {
   AZ = var.AZ
 }
 
+module "app"{
+  source                 ="git::https://github.com/chandralekhasingasani/tf-module-mutable.git"
+  ENV                    = var.ENV
+  COMPONENT              = var.COMPONENT
+  VPC_ID                 = module.vpc.VPC_ID
+  SUBNET_IDS             = module.vpc.SUBNET_IDS
+  CIDR_BLOCK             = module.vpc.VPC_CIDR
+  INSTANCE_TYPE          = var.INSTANCE_TYPE
+  SPOT_INSTANCE_COUNT    = var.SPOT_INSTANCE_COUNT
+  INSTANCE_COUNT         = var.INSTANCE_COUNT
+  WORKSTATION_IP         = var.WORKSTATION_IP
+  PORT                   = var.PORT
+  IAM_INSTANCE_PROFILE   = var.IAM_INSTANCE_PROFILE
+}
+
+
 
