@@ -20,6 +20,7 @@ module "elasticcache"{
   NUM_CACHE_NODES        = var.NUM_CACHE_NODES
   ENGINE_VERSION         = var.ENGINE_VERSION
   FAMILY                 = var.FAMILY
+  PRIVATE_HOSTED_ZONE_ID = module.vpc.PRIVATE_HOSTED_ZONE_ID
 }
 
 module "documentdb" {
@@ -40,7 +41,7 @@ module "documentdb" {
 }
 
 module "app"{
-  depends_on             = [module.elasticcache]
+  depends_on             = [module.documentdb,module.elasticcache]
   source                 = "git::https://github.com/chandralekhasingasani/tf-module-mutable.git"
   ENV                    = var.ENV
   COMPONENT              = var.COMPONENT
@@ -57,6 +58,7 @@ module "app"{
   CIDR_BLOCK_ELB_ACCESS  = [var.FRONT_END_CIDR, module.vpc.VPC_CIDR]
   DBTYPE                 = var.DBTYPE
   DOCDB_ENDPOINT         = module.documentdb.DOCDB_ENDPOINT
+  PRIVATE_HOSTED_ZONE_ID = module.vpc.PRIVATE_HOSTED_ZONE_ID
 }
 
 
