@@ -27,5 +27,4 @@ variable "IS_ALB_INTERNAL" {
 }
 variable "FRONT_END_CIDR" {}
 variable "DB_TYPE" {
-  default = null
 }
