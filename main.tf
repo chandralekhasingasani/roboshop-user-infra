@@ -62,6 +62,7 @@ module "app"{
   DBTYPE                 = var.DBTYPE
   DOCDB_ENDPOINT         = module.documentdb.DOCDB_ENDPOINT
   PRIVATE_HOSTED_ZONE_ID = module.vpc.PRIVATE_HOSTED_ZONE_ID
+  PROMETHEUS_IP          = var.PROMETHEUS_IP
 }
 
 
